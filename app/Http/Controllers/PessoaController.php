@@ -57,8 +57,11 @@ class PessoaController extends Controller
             $cep_verify = $this->cep->getCep($createPessoaRequest->cep);
             if(!$cep_verify){
                 $cep = $this->cep->createCep($createPessoaRequest->except('nome_pessoa'));
+                $cep_id = $cep->id;
+            }else{
+                $cep_id = $cep_verify->id_cep_pk;
             }
-            $this->endereco->createEndereco(["cep_fk" => $cep->id ?? $cep_verify, "pessoa_fk" => $pessoa->id]);
+            $this->endereco->createEndereco(["cep_fk" => $cep_id, "pessoa_fk" => $pessoa->id]);
             DB::commit();
             return redirect()->back()->with('success', "Pessoa cadastrada com sucesso");
         }catch(\Exception $e){

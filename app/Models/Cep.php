@@ -27,6 +27,6 @@ class Cep extends Model
     }
 
     public function getCep(int $id){
-        return $this->where('id_cep_pk', $id)->first();
+        return $this->where('cep', $id)->first();
     }
 }

@@ -32,10 +32,12 @@
                 <th scope="col">Endereço</th>
                 <th scope="col">Localidade</th>
                 <th scope="col">Bairro</th>
-                <th scope="col">Acção</th>
             </tr>
         </thead>
         <tbody>
+            @if ($data->count() == 0)
+                 <td colspan="6"><h1 class="text-center">Sem registros</h1></td>
+            @endif
             @foreach ($data as $pessoa)
             <tr>
                 <th scope="row"> {{ $pessoa->id_pessoa_pk }} </th>
@@ -44,10 +46,6 @@
                 <td>{{ $pessoa->endereco }}</td>
                 <td>{{ $pessoa->localidade }}</td>
                 <td>{{ $pessoa->bairro }}</td>
-                <td>
-                    <a href="#" class="btn btn-sm btn-warning">Editar</a>
-                    <a href="#" class="btn btn-sm btn-danger">Apagar</a>
-                </td>
             </tr>
             @endforeach
         </tbody>
@@ -72,7 +70,7 @@
                 } else if (response.error == true) {
                     alert(response.message)
                 } else {
-                    alert(response.message)
+                    alert("Atualiza a pagina")
                 }
 
             }
