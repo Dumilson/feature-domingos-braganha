@@ -16,6 +16,7 @@
     </style>
 </head>
 <body>
+    @include("pages.components.modal-create")
     <div class="container">
         @yield('content')
     </div>

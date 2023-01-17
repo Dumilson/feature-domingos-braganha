@@ -21,7 +21,10 @@ class Pessoa extends Model
     }
 
     public function getAllPessoa(){
-        return $this->paginate(10);
+        return $this->join('tb_endereco','tb_endereco.pessoa_fk','=','id_pessoa_pk')
+                    ->join('tb_cep','tb_cep.id_cep_pk','=','cep_fk')
+                    ->orderBy('id_pessoa_pk','desc')
+                    ->paginate(10);
     }
 
     public function updatePessoa(int $id, array $data){

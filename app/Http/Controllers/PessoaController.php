@@ -22,6 +22,10 @@ class PessoaController extends Controller
         $this->endereco = $endereco;
     }
 
+    public function index(){
+        $data = $this->pessoa->getAllPessoa();
+        return view("pages.index", compact('data'));
+    }
     public function getCepPessoa($cep = null){
         if(empty($cep)){
             return response()->json([
@@ -47,7 +51,6 @@ class PessoaController extends Controller
     }
 
     public function store(CreatePessoaRequest $createPessoaRequest){
-        // dd($createPessoaRequest->all());
         try{
             DB::beginTransaction();
             $pessoa = $this->pessoa->createPessoa(["nome_pessoa" => $createPessoaRequest->nome_pessoa]);
@@ -60,8 +63,6 @@ class PessoaController extends Controller
             return redirect()->back()->with('success', "Pessoa cadastrada com sucesso");
         }catch(\Exception $e){
             DB::rollback();
-            dd($e->getMessage());
-
             return redirect()->back()->withErrors("Erro ao fazer o cadastro");
         }
     }
