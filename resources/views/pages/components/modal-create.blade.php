@@ -10,27 +10,27 @@
                     @csrf
                     <div class="form-group">
                         <label for="">Nome</label>
-                        <input type="text" class="form-control" placeholder="Informe o nome da Pessoa ">
+                        <input type="text" name = "nome_pessoa" class="form-control" placeholder="Informe o nome da Pessoa ">
                     </div>
 
                     <div class="form-group">
                         <label for="">Cep</label>
-                        <input type="text" class="form-control" placeholder="Informe o numero do Cep" onblur="getCep()" id="cep">
+                        <input type="text" name = "cep" class="form-control" placeholder="Informe o numero do Cep" onblur="getCep()" id="cep">
                     </div>
 
                     <div class="form-group">
                         <label for="">Endereço</label>
-                        <input type="text" class="form-control" placeholder="Dados automaticos" disabled id="endereco">
+                        <input type="text" name = "endereco" class="form-control" placeholder="Dados automaticos" disabled id="endereco">
                     </div>
 
                     <div class="form-group">
                         <label for="">Localidade</label>
-                        <input type="text" class="form-control" placeholder="Dados automaticos" disabled id="localidade" >
+                        <input type="text" name = "localidade" class="form-control" placeholder="Dados automaticos" disabled id="localidade" >
                     </div>
 
                     <div class="form-group">
                         <label for="">Bairro</label>
-                        <input type="text" class="form-control" placeholder="Dados automaticos" disabled id="bairro">
+                        <input type="text" name = "bairro" class="form-control" placeholder="Dados automaticos" disabled id="bairro">
                     </div>
                 </form>
             </div>
