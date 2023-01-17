@@ -1,4 +1,4 @@
-# Cep Api Data Scraping
+# Cadastro Simples Com Laravel
 ## Stacks
  `PHP | Laravel | MySQL | REST | API`
  ## Requirements to run the application
