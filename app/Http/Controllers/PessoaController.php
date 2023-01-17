@@ -16,7 +16,7 @@ class PessoaController extends Controller
         }
 
         $data = CepApi::getCep($cep);
-        return $data;
+        
         if(is_array($data)){
             return response()->json([
                 'error' => false,

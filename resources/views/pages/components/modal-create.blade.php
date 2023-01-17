@@ -15,7 +15,7 @@
 
                     <div class="form-group">
                         <label for="">Cep</label>
-                        <input type="text" class="form-control" placeholder="Informe o numero do Cep">
+                        <input type="text" class="form-control" placeholder="Informe o numero do Cep" onblur="getCep()" id="cep">
                     </div>
 
                     <div class="form-group">
@@ -24,8 +24,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="">Complemento</label>
-                        <input type="text" class="form-control" placeholder="Dados automaticos" disabled id="complemento" >
+                        <label for="">Localidade</label>
+                        <input type="text" class="form-control" placeholder="Dados automaticos" disabled id="localidade" >
                     </div>
 
                     <div class="form-group">

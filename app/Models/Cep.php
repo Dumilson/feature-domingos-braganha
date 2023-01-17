@@ -14,7 +14,7 @@ class Cep extends Model
         'id_cep_pk',
         'cep',
         'endereco',
-        'complemento',
+        'localidade',
         'bairro'
     ];
 
