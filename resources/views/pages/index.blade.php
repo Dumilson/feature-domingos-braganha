@@ -6,6 +6,18 @@
         Cadastro de Pessoas
     </h1>
 
+    @if (session()->has('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+    @if ($errors->any())
+    @foreach ($errors->all() as $error)
+    <div class="alert alert-danger" role="alert">
+        <li>{{ $error }}</li>
+    </div>
+    @endforeach
+
     <button class="btn btn-primary mt-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Cadastrar Pessoa
     </button>
@@ -41,28 +53,25 @@
 
 @push('js')
 <script>
-
     function getCep() {
         var cep = document.getElementById("cep").value
         $.ajax({
-            type: "GET",
-            url: "/buscar-cep/"+cep,
-            dataType: "json",
-            success: function (response) {
-                if(response.error == false){
+            type: "GET"
+            , url: "/buscar-cep/" + cep
+            , dataType: "json"
+            , success: function(response) {
+                if (response.error == false) {
                     $("#bairro").val(response.message.bairro)
                     $("#endereco").val(response.message.logradouro)
                     $("#localidade").val(response.message.localidade)
-                }else if(response.error == true){
+                } else if (response.error == true) {
                     alert(response.message)
-                }else{
+                } else {
                     alert(response.message)
                 }
 
             }
         });
-
-       
     }
 
 </script>
