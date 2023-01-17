@@ -18,4 +18,15 @@ class Cep extends Model
         'bairro'
     ];
 
+    public function createCep(array $data){
+        return $this->create($data);
+    }
+
+    public function updateCep(int $id, array $data){
+        return $this->where('id_cep_pk', $id)->update($data);
+    }
+
+    public function getCep(int $id){
+        return $this->where('id_cep_pk', $id)->first();
+    }
 }

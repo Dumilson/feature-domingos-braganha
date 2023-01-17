@@ -17,6 +17,7 @@
         <li>{{ $error }}</li>
     </div>
     @endforeach
+    @endif
 
     <button class="btn btn-primary mt-4 mb-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Cadastrar Pessoa
@@ -56,10 +57,10 @@
     function getCep() {
         var cep = document.getElementById("cep").value
         $.ajax({
-            type: "GET"
-            , url: "/buscar-cep/" + cep
-            , dataType: "json"
-            , success: function(response) {
+            type: "GET", 
+            url: "/buscar-cep/" + cep,
+            dataType: "json",
+            success: function(response) {
                 if (response.error == false) {
                     $("#bairro").val(response.message.bairro)
                     $("#endereco").val(response.message.logradouro)

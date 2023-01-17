@@ -18,5 +18,6 @@ Route::group([
     'prefix' => '/'
 ], function(){
     Route::get('/',[HomeController::class, 'index'])->name('home.index');
+    Route::post('/registrar-pessoa',[PessoaController::class, 'store'])->name('home.store');
     Route::get('/buscar-cep/{cep?}', [PessoaController::class, 'getCepPessoa'])->name('get.cep');
 });
