@@ -1,11 +1,12 @@
 @extends('template.app')
 @section('content')
+@include("pages.components.modal-create")
 <div class="mt-4">
     <h1>
         Cadastro de Pessoas
     </h1>
 
-    <button class="btn btn-primary mt-4 mb-4">
+    <button class="btn btn-primary mt-4 mb-4"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Cadastrar Pessoa
     </button>
 </div>
