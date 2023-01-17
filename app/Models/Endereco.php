@@ -16,4 +16,12 @@ class Endereco extends Model
         'pessoa_fk',
         'cep_fk'
     ];
+
+    public function createEndereco(array $data){
+        return $this->create($data);
+    }
+
+    public function updateEndereco(int $id, array $data){
+        return $this->where('pessoa_pk', $id)->update($data);
+    }
 }
